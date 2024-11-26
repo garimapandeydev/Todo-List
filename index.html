@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>List and Items</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+            background-color: rgb(249, 248, 247);
+        }
+        table, th, td {
+            border: none;
+            border-collapse: collapse;
+            padding: 2px;
+        }
+        th, td {
+            text-align: left;
+           
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My List</h1>
+    <div class="nav">
+        <button class="tablinks" onclick="showTab('list-tab')">Category</button>
+        <button class="tablinks" onclick="showItemsTab()" id="hid">Items</button>
+        <button class="tablinks" onclick="showAllItemsTab()">All Items</button> 
+    </div>
+    
+    <div id="all-items-tab" class="tab">
+        <h2>All Items</h2>
+        <table id="allItemsTable">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>List Name</th>
+                    <th>Item Title</th>
+                   
+                    <th>Sub-Items</th>
+                    <th>Due Date</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+
+</div>
+    <div id="list-tab" class="tab active">
+        <h2>List Tab</h2>
+        <form id="listForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+
+            <label for="isImmediate">Is Immediate:</label>
+            <select id="isImmediate" name="isImmediate" required>
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+            <br><br>
+
+            <div id="dueDateField" class="hidden">
+                <label for="dueDate">Due Date:</label>
+                <input type="date" id="dueDate" name="dueDate">
+                <br><br>
+            </div>
+
+            <button type="submit">Add Entry</button>
+        </form>
+
+        <h3>Entries</h3>
+        <table id="listTable">
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Is Immediate</th>
+                    <th>Due Date</th>
+                    <th>No. of Items</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="items-tab" class="tab">
+        <h2>Items Tab</h2>
+        <div id="items-container"></div>
+    </div>
+
+    <script src="script2.js">
+       
+    </script>
+</body>
+</html>
